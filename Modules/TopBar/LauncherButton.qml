@@ -55,7 +55,7 @@ Item {
                 return "transparent";
             }
 
-            const baseColor = launcherArea.containsMouse ? Theme.primaryPressed : (SessionService.idleInhibited ? Theme.primaryHover : Theme.secondaryHover);
+            const baseColor = launcherArea.containsMouse ? Theme.widgetBaseHoverColor : Theme.widgetBaseBackgroundColor;
             return Qt.rgba(baseColor.r, baseColor.g, baseColor.b, baseColor.a * Theme.widgetTransparency);
         }
 
@@ -76,15 +76,5 @@ Item {
             size: Theme.iconSize - 6
             color: Theme.surfaceText
         }
-
-        Behavior on color {
-            ColorAnimation {
-                duration: Theme.shortDuration
-                easing.type: Theme.standardEasing
-            }
-
-        }
-
     }
-
 }
